@@ -1,0 +1,16 @@
+{
+  "name": "codejam-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "mocha": "^5.2.0"
+  }
+}
