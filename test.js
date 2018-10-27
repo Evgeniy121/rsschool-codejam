@@ -1,8 +1,12 @@
 const assert = require('assert');
 const sumOfOther = require('./src/sumOfOther.js');
-
+const make = require('./src/make.js');
+function sum(a, b) {
+  return a + b;
+}
 describe('Function tests', () => {
   describe('sumOfOther', () => {
+    
     it('test 1', () => {
       assert.deepStrictEqual(sumOfOther([1,2,3,4,5]), [14,13,12,11,10]);
     });
@@ -21,4 +25,22 @@ describe('Function tests', () => {
       ]);
     });
   });
+  describe('make', () => {
+    it('test 1', () => {
+      assert.deepStrictEqual(make(1)(2)(3)(sum), 6);
+    });
+    it('test 2', () => {
+      assert.deepStrictEqual(make(1,2,3,4)(5)(sum),15);
+    });
+    it('test 3', () => {
+      assert.deepStrictEqual(make(1,2)(10,20)(100,200,300)(sum), 633);
+    });
+    it('test 4', () => {
+      assert.deepStrictEqual(make(1,9,8,7)(sum), 25);
+    });
+    it('test 5', () => {
+      assert.deepStrictEqual(make(2)(4)(0,7,8)(sum), 21);
+    });
+    
+    });
 });
